@@ -32,10 +32,10 @@ const PREFIX = '!';
 
 // THE ROLE LIST (Must stay highest to lowest)
 const ROLE_THRESHOLDS = [
-  { count: 5500, id: '1493208783512666253', name: 'Diamond' },
-  { count: 3000, id: '1493208783512666253', name: 'Ruby' },
-  { count: 1500, id: '1493208783512666253', name: 'Obsidian' },
-  { count: 500,  id: '1493208783512666253', name: 'Saphire' }
+  { count: 5500, id: 'REPLACE_WITH_DIAMOND_ID', name: 'Diamond' },
+  { count: 3000, id: 'REPLACE_WITH_RUBY_ID', name: 'Ruby' },
+  { count: 1500, id: 'REPLACE_WITH_OBSIDIAN_ID', name: 'Obsidian' },
+  { count: 500,  id: 'REPLACE_WITH_SAPHIRE_ID', name: 'Saphire' }
 ];
 
 // Helper: Syncs roles (promotes/demotes accurately)
@@ -62,6 +62,9 @@ client.on('ready', () => console.log(`Logged in as ${client.user.tag}!`));
 
 client.on('messageCreate', async (message) => {
   if (message.author.bot || !message.guild) return;
+
+  // === THE DEBUG TRACKER ===
+  console.log(`[DEBUG] I just saw a message from ${message.author.username}: ${message.content}`);
 
   const userId = message.author.id;
   const guildId = message.guild.id;
